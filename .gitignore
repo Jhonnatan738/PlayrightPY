@@ -1,0 +1,8 @@
+#Ignorando carpeta de almacenamiento de Json de Allure
+
+allure-results/
+allure-report/
+
+#Ignorando Imagenes no necesarias para el proyecto
+*.png
+*.jpg
