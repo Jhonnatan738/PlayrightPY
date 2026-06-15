@@ -10,7 +10,7 @@ class BuscarEnGoogle:
     def el_termino(termino_busqueda: str):
         return BuscarEnGoogle(termino_busqueda)
 
-    @allure.step("El actor realiza una búsqueda básica del término: '{termino_busqueda}'")
+    @allure.step("El actor realiza una búsqueda básica del término ingresado")
     def perform_as(self, actor: Actor):
         browser = actor.ability_to(BrowseTheWeb)
         page = browser.page
