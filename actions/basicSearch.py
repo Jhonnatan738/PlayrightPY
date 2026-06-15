@@ -1,19 +1,22 @@
 import allure
+from ui import login
+from utils.core import BrowseTheWeb, Actor
 
-class GoogleSearchPage:
-    def __init__(self, page):
-        self.page = page
+class BuscarEnGoogle:
+    def __init__(self, termino_busqueda: str):
+        self.termino_busqueda = termino_busqueda
 
-    @allure.step("Realizando una búsqueda básica en Google")
-    def realizar_busqueda_basica(self):
-        self.page.fill('textarea[id="APjFqb"]', 'Playwright')
-        self.allurePicture('search_filled.png')
-        self.page.press('textarea[id="APjFqb"]', 'Enter')
+    @staticmethod
+    def el_termino(termino_busqueda: str):
+        return BuscarEnGoogle(termino_busqueda)
 
-    def allurePicture(self, picture_path):
-        self.page.screenshot(path=picture_path)
-        allure.attach.file(
-            picture_path, 
-            name=picture_path, 
-            attachment_type=allure.attachment_type.PNG
-        )
+    @allure.step("El actor realiza una búsqueda básica del término: '{termino_busqueda}'")
+    def perform_as(self, actor: Actor):
+        browser = actor.ability_to(BrowseTheWeb)
+        page = browser.page
+        
+        page.fill(login.SEARCH_TEXTAREA, self.termino_busqueda)
+        
+        browser.take_screenshot("busqueda_completada")
+        
+        page.press(login.SEARCH_TEXTAREA, 'Enter')
