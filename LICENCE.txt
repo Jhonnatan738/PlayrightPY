@@ -1,0 +1,11 @@
+Copyright (c) 2026 jhonnatanposada.dev
+
+Este código es parte de mi portafolio profesional de QA Automation. 
+Se permite la visualización y estudio del código con fines educativos.
+
+Bajo los siguientes términos:
+1. Atribución: Debe dar crédito de manera adecuada y proporcionar un enlace a la licencia.
+2. No Comercial: No puede utilizar el material con fines comerciales.
+3. Sin Derivadas: Si remezcla, transforma o crea a partir del material, no podrá distribuir el material modificado.
+
+Para cualquier otro uso, por favor contactar al autor.
