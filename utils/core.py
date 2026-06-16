@@ -6,10 +6,9 @@ class BrowseTheWeb:
         self.page = page
 
     def take_screenshot(self, name: str):
-        path = f"{name}.png"
-        self.page.screenshot(path=path)
-        allure.attach.file(
-            path, 
+        imagen_en_bytes = self.page.screenshot()
+        allure.attach(
+            imagen_en_bytes, 
             name=name, 
             attachment_type=allure.attachment_type.PNG
         )

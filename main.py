@@ -5,7 +5,7 @@ from utils.core import Actor, BrowseTheWeb
 from actions.basicSearch import IngresarTexto
 from actions.selectIntems import darClick
 
-@allure.feature("Búsqueda básica en Google")
+@allure.feature("Compra de dos productos")
 def test_main(page: Page):
     jhonnatan = Actor("Jhonnatan").who_can(BrowseTheWeb(page))
     

@@ -1,17 +1,21 @@
 import allure
 from utils.core import BrowseTheWeb, Actor
+from utils.dictionary import diccionarioSteps
 
 class darClick:
-    def __init__(self, campo_ingresar: str):
-        self.campo_ingresar = campo_ingresar
+    def __init__(self, campo_seleccionar: str):
+        self.campo_seleccionar = campo_seleccionar
 
     @staticmethod
-    def alElemento(campo_ingresar: str):
-        return darClick(campo_ingresar)
+    def alElemento(campo_seleccionar: str):
+        return darClick(campo_seleccionar)
 
-    @allure.step("El usuario presionara el boton requerido")
     def perform_as(self, actor: Actor):
-        browser = actor.ability_to(BrowseTheWeb)
-        page = browser.page
-        page.click(self.campo_ingresar)
-        browser.take_screenshot("clickDado")
+        with allure.step(f"El actor dara click '{diccionarioSteps.personalizar_step(self.campo_seleccionar)}'"):
+            browser = actor.ability_to(BrowseTheWeb)
+            page = browser.page
+            page.click(self.campo_seleccionar)
+            browser.take_screenshot("click exitoso")
+        
+
+   
