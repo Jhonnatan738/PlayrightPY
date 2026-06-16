@@ -1,4 +1,3 @@
-# screenplay_core.py
 import allure
 from playwright.sync_api import Page
 
@@ -16,7 +15,6 @@ class BrowseTheWeb:
         )
 
 class Actor:
-    """El protagonista de la prueba que ejecuta las tareas."""
     def __init__(self, name: str):
         self.name = name
         self.abilities = {}
